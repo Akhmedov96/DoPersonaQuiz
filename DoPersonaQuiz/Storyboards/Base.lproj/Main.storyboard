@@ -202,6 +202,7 @@
                                         <buttonConfiguration key="configuration" style="plain" title="Ответить"/>
                                         <connections>
                                             <action selector="multipleButtonAnswerPressed" destination="j9o-pZ-OFn" eventType="touchUpInside" id="Ez7-Og-XlK"/>
+                                            <segue destination="gu1-ow-N2T" kind="show" id="WcI-3A-6Oe"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -285,7 +286,6 @@
                         <outletCollection property="multipleSwitches" destination="Trb-zl-wVq" collectionClass="NSMutableArray" id="j3n-7c-3Et"/>
                         <outletCollection property="rangedLabels" destination="k8K-bJ-HsV" collectionClass="NSMutableArray" id="gEc-vl-Tky"/>
                         <outletCollection property="rangedLabels" destination="f9B-xd-ozH" collectionClass="NSMutableArray" id="oof-cK-NOX"/>
-                        <segue destination="gu1-ow-N2T" kind="show" identifier="showResult" id="QWz-Da-Zok"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VIy-Ai-13k" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -295,7 +295,7 @@
         <!--Результат-->
         <scene sceneID="bNb-e4-qei">
             <objects>
-                <viewController id="gu1-ow-N2T" customClass="ResultViewController" customModule="DoPersonaQuiz" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="resultVC" id="gu1-ow-N2T" customClass="ResultViewController" customModule="DoPersonaQuiz" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="s1O-wy-Vew">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -333,10 +333,14 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="explanationResultLabel" destination="JDJ-HC-bgk" id="kqU-wZ-JBs"/>
+                        <outlet property="resultLabel" destination="IS2-oz-U4G" id="Kjg-H7-aOd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZGs-s3-wOh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2076" y="3"/>
+            <point key="canvasLocation" x="2158" y="0.0"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="S2Y-po-zRH">
@@ -344,7 +348,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="bsk-FQ-Jjm" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="fg5-Lm-fNf">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="92.5"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="98.5"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
